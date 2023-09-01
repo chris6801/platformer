@@ -20,7 +20,7 @@ class PhysicsEntity:
             if entity_rect.colliderect(rect):
                 if frame_movement[0] > 0:
                     entity_rect.right = rect.left
-                if frame_movement[0] < 1:
+                if frame_movement[0] < 0:
                     entity_rect.left = rect.right
                 self.pos[0] = entity_rect.x
 
@@ -30,10 +30,10 @@ class PhysicsEntity:
             if entity_rect.colliderect(rect):
                 if frame_movement[1] > 0:
                     entity_rect.bottom = rect.top
-                if frame_movement[1] < 1:
+                if frame_movement[1] < 0:
                     entity_rect.top = rect.bottom
                 self.pos[1] = entity_rect.y
-                self.velocity[1] = 0
+                #self.velocity[1] = 0
 
         self.velocity[1] = min(5, self.velocity[1] + 0.1)
 
